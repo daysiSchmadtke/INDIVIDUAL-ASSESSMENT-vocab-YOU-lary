@@ -7,8 +7,18 @@
   <title>Logos</title>
 </head>
 <body>
+  <h1>Logos</h1>
+  <div class='welcome-msg'>
+    <h2> Your <span class="text-info">Digital Board</span> of Ideas, <span class="text-info">Visualize</span> your path to action.</h2>
+  </div>
   <div id="login-form-container"></div>
   <div id="app"></div>
   <div id="results-container"></div>
+  <script>
+      document.querySelector('#google-login').addEventListener('click', () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider);
+  });
+  </script>
 </body>
 </html>
