@@ -1,6 +1,7 @@
 import renderToDOM from '../utils/renderToDom';
 
 const navBar = () => {
+  document.querySelector('#app').innerHTML = '';
   const domString = `
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container-fluid">

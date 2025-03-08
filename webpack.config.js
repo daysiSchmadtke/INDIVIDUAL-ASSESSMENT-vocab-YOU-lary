@@ -3,7 +3,6 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
-
 const path = require('path');
 const dotenv = require('dotenv').config({path: __dirname + '/.env'});
 
@@ -19,7 +18,7 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
-    new webpack.DefinePlugin( {
+    new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env || dotenv.parsed),
     }),
     new ESLintPlugin()
@@ -62,8 +61,16 @@ module.exports = {
       new CssMinimizerPlugin()
     ]
   },
-  // Opens browser on run of npm start 
   devServer: {
-    open: true
+    open: true,
+    headers: {
+      'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',
+      'Cross-Origin-Embedder-Policy': 'require-corp'
+    },
+    static: {
+      directory: path.join(__dirname, 'dist')
+    },
+    compress: true,
+    port: 9000
   }
 };

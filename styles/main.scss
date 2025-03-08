@@ -1,10 +1,37 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "~bootstrap/scss/bootstrap";
 
-
+*{
+  cursor: pointer;
+}
 body {
-  background-color:rgb(14,14,14) ;
+  background-color:#000000;
   color: rgb(255,255,255);
   text-align: center;
   margin-top: 100px;
+}
+
+h1 {
+  padding: 30px;
+  font-size: 2rem;
+  font-family: monospace;
+  transition: font-size 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+h1:hover {
+  font-size: 2.5rem;
+  color: #00F6ED; 
+}
+
+#google-login{
+  margin: 20px;
+  transition: font-size 0.5s ease-in-out, color 0.5s ease-in-out;
+  color:#FFFAFF ;
+  background-color:#5E2BFF;
+}
+
+#google-login:hover {
+  font-size: 1.5rem;
+  background-color: #E4D9FF; 
+  color: #5E2BFF;
 }
