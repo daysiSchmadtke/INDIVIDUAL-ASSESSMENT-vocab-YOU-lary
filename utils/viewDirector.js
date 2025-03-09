@@ -1,12 +1,17 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import loginButton from '../components/loginButton';
 import logoutButton from '../components/logoutButton';
 import client from './client';
 
+// Initialize Firebase
+const app = initializeApp(client);
+
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(app);
+
 const ViewDirectorBasedOnUserAuthStatus = () => {
-  firebase.initializeApp(client);
-  firebase.auth().onAuthStateChanged((user) => {
+  onAuthStateChanged(auth, (user) => {
     if (user) {
       logoutButton();
     } else {

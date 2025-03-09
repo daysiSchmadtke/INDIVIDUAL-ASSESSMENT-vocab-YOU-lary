@@ -1,9 +1,12 @@
+import React from 'react';
 import { signOut } from '../utils/auth';
 
-const logoutButton = () => {
-  const domString = '<button id="google-auth" class="btn btn-danger">SIGNOUT</button>';
-  document.querySelector('#login-form-container').innerHTML = (domString);
-  document.querySelector('#google-auth').addEventListener('click', signOut);
+const LogoutButton = () => {
+  return (
+    <button id="google-logout" className="btn btn-info" onClick={signOut}>
+      Logout
+    </button>
+  );
 };
 
-export default logoutButton;
+export default LogoutButton;

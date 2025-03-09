@@ -2,19 +2,22 @@
   "name": "Logos",
   "version": "1.0.0",
   "description": "digital board of ideas",
-  "main": "public/main.js",
+  "main": "src/index.js", 
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "start": "react-scripts start",  
+    "build": "react-scripts build",  
+    "test": "react-scripts test",  
+    "eject": "react-scripts eject",
+    "webpack-dev-server": "webpack serve --mode development",
+    "webpack-build": "webpack --mode production"
   },
   "keywords": [],
   "author": "Daysi Schmadtke",
   "license": "ISC",
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
     "css-loader": "^6.2.0",
     "css-minimizer-webpack-plugin": "^3.0.2",
-    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",
     "eslint-webpack-plugin": "^3.0.1",
@@ -34,6 +37,9 @@
     "dotenv": "^10.0.0",
     "firebase": "^11.4.0",
     "gsap": "^3.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
     "sass": "^1.51.0"
   }
 }

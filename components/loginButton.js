@@ -1,11 +1,12 @@
+import React from 'react';
 import { signIn } from '../utils/auth';
 
-// GOOGLE LOGIN BUTTON
-const loginButton = () => {
-  const domString = `<button id="google-login" class="btn btn-info">Login</button>
-`;
-  document.querySelector('#app').innerHTML = domString;
-  document.querySelector('#google-auth').addEventListener('click', signIn);
+const LoginButton = () => {
+  return (
+    <button id="google-login" className="btn btn-info" onClick={signIn}>
+      Login
+    </button>
+  );
 };
 
-export default loginButton;
+export default LoginButton;

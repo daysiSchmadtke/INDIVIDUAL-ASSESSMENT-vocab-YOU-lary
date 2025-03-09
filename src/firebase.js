@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut as firebaseSignOut } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -10,23 +10,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APP_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const signIn = () => {
-  const provider = new GoogleAuthProvider();
-  signInWithPopup(auth, provider)
-    .catch((error) => {
-      console.error(error);
-    });
-};
-
-const signOut = () => {
-  firebaseSignOut(auth)
-    .catch((error) => {
-      console.error(error);
-    });
-};
-
-export { signIn, signOut };
+export { auth };
